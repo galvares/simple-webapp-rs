@@ -1,0 +1,36 @@
+<html>
+  <head> 
+    <title>NOTES.CONSTRUCTION App</title> 
+    <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7964312/7143592/css/fonts.css"> 
+  </head> 
+  <body>
+    
+    <h1 id="heading"> 
+      <div style="font-family: Giant Background A, Giant Background B;font-style: normal;font-weight: 400;font-size:30pt;">
+        My Notes
+      </div> 
+    </h1> 
+    
+    <div style="font-family: Gotham A, Gotham B;font-style: normal;font-weight: 400;">
+      Check out my all my notes
+    </div>
+    
+    <br>
+
+    <ul>
+      {{#notes}}
+      <li>
+        <a href="/note/{{id}}">{{title}}</a>
+      </li>
+      {{/notes}}
+    </ul>
+
+    <br> 
+    <br> 
+  </body>
+  <script>
+   if (location.hash === "#deleted") {
+     alert("note deleted with success!");
+   }
+  </script>
+</html>

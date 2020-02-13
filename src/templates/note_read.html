@@ -1,0 +1,75 @@
+<html>
+  <head> 
+    <title>NOTES.CONSTRUCTION App</title> 
+    <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7964312/7143592/css/fonts.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head> 
+  <body>
+    
+    <h1 id="heading"> 
+      <div style="font-family: Giant Background A, Giant Background B;font-style: normal;font-weight: 400;font-size:30pt;">
+        My Notes
+      </div> 
+    </h1> 
+    
+    <div style="font-family: Gotham A, Gotham B;font-style: normal;font-weight: 400;">
+      My Note #{{id}}
+    </div>
+    
+    <br>
+
+    <p>
+      {{title}}
+    </p>
+
+    <p>
+      {{content}}
+    </p>
+    
+    <br>
+
+    <form id="delete-note">
+      <input id="submit-delete" type=”submit” value="Delete"  style="cursor:pointer" title="Click to delete note" />
+    </form>    
+    
+    <br>
+    <br> 
+  </body>
+  
+  <script type="text/javascript">
+   if (location.hash === "#added") {
+     alert("The note was inserted with success!");
+   }
+  </script>
+
+  <script type="text/javascript">
+   // implementing DELETE and PUT for jQuery
+   jQuery.each(["put", "delete"], function(i, method) {
+     jQuery[method ] = function(url, data, callback, type) {
+       if (jQuery.isFunction(data)) {
+         type = type || callback;
+         callback = data;
+         data = undefined;
+       }
+
+       return jQuery.ajax({
+         url: url,
+         type: method,
+         dataType: type,
+         data: data,
+         success: callback
+       });
+     };
+   });
+   
+   $("#submit-delete").click(function() {
+     $.delete("/note/{{id}}", function(data, status) {
+       alert(data);
+       if (status === "success") {
+         $(location).attr('href','/notes');
+       }
+     });
+   });
+   
+  </script>
+</html>

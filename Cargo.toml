@@ -1,0 +1,11 @@
+[package]
+name = "lol"
+version = "0.1.0"
+authors = ["gurugeek <gurugeek@mac.com>"]
+
+[dependencies]
+rouille = "2.0.0"
+postgres = "0.15.2"
+mustache = "*"
+serde = "*"
+serde_derive = "*"

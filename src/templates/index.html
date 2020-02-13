@@ -1,0 +1,34 @@
+<html>
+  <head> 
+    <title>NOTES.CONSTRUCTION App</title> 
+    <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7964312/7143592/css/fonts.css"> 
+  </head> 
+  <body>
+    
+    <h1 id="heading"> 
+      <div style="font-family: Giant Background A, Giant Background B;font-style: normal;font-weight: 400;font-size:30pt;">
+        Welcome to the NOTES.CONSTRUCTION App
+      </div> 
+    </h1> 
+    
+    <div style="font-family: Gotham A, Gotham B;font-style: normal;font-weight: 400;">
+      Fill the form to save your note
+    </div>
+    
+    <br>
+    
+    <form action="/note" method="POST" enctype="application/x-www-form-urlencoded"> 
+      <input type="text" name="title" placeholder="Title"> 
+      <br> 
+      <textarea name="content" placeholder="Your note here" cols="40" rows="5"></textarea> 
+      <br> 
+      <input type="submit" value="Insert"> 
+    </form>
+    
+    <br> 
+    <br> 
+    <a href="/notes">A list of Notes</a>
+    <br> 
+    <br> 
+  </body> 
+</html>
